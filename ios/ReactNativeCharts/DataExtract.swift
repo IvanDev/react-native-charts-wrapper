@@ -30,7 +30,7 @@ open class DataExtract {
                 dataSetConfig(chartDataSet, config: dataSet["config"])
             }
             
-            chartData.addDataSet(chartDataSet);
+            chartData.append(chartDataSet);
         }
         
         if data["config"].dictionary != nil {
@@ -62,11 +62,11 @@ open class DataExtract {
     
     func dataConfig(_ data: ChartData, config: JSON) {}
     
-    func createDataSet(_ entries: [ChartDataEntry]?, label: String?) -> IChartDataSet {
+    func createDataSet(_ entries: [ChartDataEntry], label: String) -> ChartDataSet {
         fatalError("subclass should override this function")
     }
     
-    func dataSetConfig(_ dataSet: IChartDataSet, config: JSON) {
+    func dataSetConfig(_ dataSet: ChartDataSet, config: JSON) {
         fatalError("subclass should override this function")
     }
     

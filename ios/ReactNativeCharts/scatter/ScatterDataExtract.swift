@@ -16,11 +16,11 @@ class ScatterDataExtract : DataExtract {
         return ScatterChartData();
     }
     
-    override func createDataSet(_ entries: [ChartDataEntry]?, label: String?) -> IChartDataSet {
+    override func createDataSet(_ entries: [ChartDataEntry], label: String) -> ChartDataSet {
         return ScatterChartDataSet(entries: entries, label: label)
     }
     
-    override func dataSetConfig(_ dataSet: IChartDataSet, config: JSON) {
+    override func dataSetConfig(_ dataSet: ChartDataSet, config: JSON) {
         let scatterDataSet = dataSet as! ScatterChartDataSet;
         
         ChartDataSetConfigUtils.commonConfig(scatterDataSet, config: config);

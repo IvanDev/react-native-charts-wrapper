@@ -517,14 +517,14 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
             dict["scaleX"] = barLineChart.scaleX
             dict["scaleY"] = barLineChart.scaleY
 
-            if let handler = viewPortHandler {
-                let center = barLineChart.valueForTouchPoint(point: handler.contentCenter, axis: YAxis.AxisDependency.left)
+//            if let handler = viewPortHandler {
+                let center = barLineChart.valueForTouchPoint(point: viewPortHandler.contentCenter, axis: YAxis.AxisDependency.left)
                 dict["centerX"] = center.x
                 dict["centerY"] = center.y
 
-                let leftBottom = barLineChart.valueForTouchPoint(point: CGPoint(x: handler.contentLeft, y: handler.contentBottom), axis: YAxis.AxisDependency.left)
+                let leftBottom = barLineChart.valueForTouchPoint(point: CGPoint(x: viewPortHandler.contentLeft, y: viewPortHandler.contentBottom), axis: YAxis.AxisDependency.left)
 
-                let rightTop = barLineChart.valueForTouchPoint(point: CGPoint(x: handler.contentRight, y: handler.contentTop), axis: YAxis.AxisDependency.left)
+                let rightTop = barLineChart.valueForTouchPoint(point: CGPoint(x: viewPortHandler.contentRight, y: viewPortHandler.contentTop), axis: YAxis.AxisDependency.left)
 
                 dict["left"] = leftBottom.x
                 dict["bottom"] = leftBottom.y
@@ -534,7 +534,7 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
                 if self.group != nil && self.identifier != nil {
                     ChartGroupHolder.sync(group: self.group!, identifier: self.identifier!, scaleX: barLineChart.scaleX, scaleY: barLineChart.scaleY, centerX: center.x, centerY: center.y, performImmediately: true)
                 }
-            }
+//            }
         }
 
         if self.onChange == nil {

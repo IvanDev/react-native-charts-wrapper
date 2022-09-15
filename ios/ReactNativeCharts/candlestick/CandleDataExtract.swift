@@ -11,11 +11,11 @@ class CandleDataExtract : DataExtract {
         return CandleChartData();
     }
     
-    override func createDataSet(_ entries: [ChartDataEntry]?, label: String?) -> IChartDataSet {
+    override func createDataSet(_ entries: [ChartDataEntry], label: String) -> ChartDataSet {
         return CandleChartDataSet(entries: entries, label: label)
     }
     
-    override func dataSetConfig(_ dataSet: IChartDataSet, config: JSON) {
+    override func dataSetConfig(_ dataSet: ChartDataSet, config: JSON) {
         let candleDataSet = dataSet as! CandleChartDataSet
         
         ChartDataSetConfigUtils.commonConfig(candleDataSet, config: config);

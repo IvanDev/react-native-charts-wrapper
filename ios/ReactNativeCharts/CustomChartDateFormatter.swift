@@ -8,7 +8,7 @@
 import Foundation
 import Charts
 
-open class CustomChartDateFormatter: NSObject, IValueFormatter, IAxisValueFormatter {
+open class CustomChartDateFormatter: NSObject, ValueFormatter, AxisValueFormatter {
     
     open var dateFormatter = DateFormatter();
     

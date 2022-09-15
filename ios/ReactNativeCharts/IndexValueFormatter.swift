@@ -10,7 +10,7 @@ import Foundation
 
 import Charts
 
-open class IndexValueFormatter: NSObject, IValueFormatter {
+open class IndexValueFormatter: NSObject, ValueFormatter {
   
   private var _values: [String] = [String]()
   private var _valueCount: Int = 0

@@ -1,7 +1,11 @@
 import Foundation
 import Charts
 
-open class ConfigurableMinimumLinePositionFillFormatter: NSObject, IFillFormatter {
+open class ConfigurableMinimumLinePositionFillFormatter: NSObject, FillFormatter {
+    public func getFillLinePosition(dataSet: Charts.LineChartDataSetProtocol, dataProvider: Charts.LineChartDataProvider) -> CGFloat {
+        return min
+    }
+    
 
     open var min = CGFloat(0)
 
@@ -13,7 +17,4 @@ open class ConfigurableMinimumLinePositionFillFormatter: NSObject, IFillFormatte
         self.min = min;
     }
 
-    open func getFillLinePosition(dataSet: ILineChartDataSet, dataProvider: LineChartDataProvider) -> CGFloat {
-        return min
-    }
 }

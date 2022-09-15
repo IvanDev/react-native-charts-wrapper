@@ -12,11 +12,11 @@ class BubbleDataExtract : DataExtract {
         return BubbleChartData();
     }
     
-    override func createDataSet(_ entries: [ChartDataEntry]?, label: String?) -> IChartDataSet {
+    override func createDataSet(_ entries: [ChartDataEntry], label: String) -> ChartDataSet {
         return BubbleChartDataSet(entries: entries, label: label)
     }
     
-    override func dataSetConfig(_ dataSet: IChartDataSet, config: JSON) {
+    override func dataSetConfig(_ dataSet: ChartDataSet, config: JSON) {
         let bubbleDataSet = dataSet as! BubbleChartDataSet;
         
         ChartDataSetConfigUtils.commonConfig(bubbleDataSet, config: config);
